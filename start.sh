@@ -12,7 +12,7 @@ fi
 # Create script to downloading additional nodes file and add nodes after start with 'docker exec mec-insight-docker addnodes.sh'
 echo "#!/bin/bash" > /usr/local/bin/new_config.sh
 echo "mv /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf.bak" >> /usr/local/bin/new_config.sh
-echo "wget https://raw.githubusercontent.com/dalijolijo/MECinsight-docker/master/megacoin.conf -O /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf" >> /usr/local/bin/newConfig.sh
+echo "wget https://raw.githubusercontent.com/dalijolijo/MECinsight-docker/master/megacoin.conf -O /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf" >> /usr/local/bin/new_config.sh
 echo "supervisorctl restart megacoind" >> /usr/local/bin/new_config.sh
 chmod 755 /usr/local/bin/new_config.sh
 
