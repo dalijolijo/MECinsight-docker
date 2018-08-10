@@ -9,9 +9,13 @@ if [ ! -d /home/megacoin/bitcore-livenet/bin/mynode/data/data/blocks ] && [ "$(c
         rm ${BOOTSTRAP}; \
 fi
 
-# Downloading and add additional nodes 
+# Downloading additional nodes file
 wget https://raw.githubusercontent.com/dalijolijo/MECinsight-docker/master/addnodes.conf -O /home/megacoin/bitcore-livenet/bin/mynode/data/addnodes.conf
-cat /home/megacoin/bitcore-livenet/bin/mynode/data/addnodes.conf >> /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf
+
+# Create script to add nodes after start with 'docker exec mec-insight-docker addnodes.sh'
+echo "#!/bin/bash" > /usr/local/bin/addnodes.sh
+echo "cat /home/megacoin/bitcore-livenet/bin/mynode/data/addnodes.conf >> /home/megacoin/bitcore-livenet/bin/mynode/data/megacoin.conf" > /usr/local/bin/addnodes.sh
+chmod 755 /usr/local/bin/addnodes.sh
 
 # Starting Supervisor Service
 exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
