@@ -21,10 +21,10 @@ Login as root, then only run the following script:
 sudo bash -c "$(curl -fsSL https://github.com/dalijolijo/MECinsight-docker/raw/master/mec-insight-docker.sh)"
 ```
 
-## Add nodes to megacoin.conf
-Modify [addnodes.conf](https://github.com/dalijolijo/MECinsight-docker/blob/master/addnodes.conf) and trigger the addnodes.sh script inside the running docker container with:
+## Replace existing megacoin.conf
+Modify [megacoin.conf](https://github.com/dalijolijo/MECinsight-docker/blob/master/megacoin.conf) and trigger the new_config.sh script inside the running docker container with:
 ```sh
-docker exec mec-insight-docker addnodes.sh
+sudo docker exec mec-insight-docker new_config.sh
 ```
 
 ## Build/run (only for docker image development)
