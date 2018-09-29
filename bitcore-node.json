@@ -14,10 +14,10 @@
         "exec": "/home/megacoin/bitcore-livenet/bin/megacoind"
       }
     },
-    "insight-api-bitcore": {
+    "insight-api-mec": {
         "routePrefix": "api"
     },
-    "insight-ui-bitcore": {
+    "insight-ui-mec": {
         "apiPrefix": "api",
         "routePrefix": ""
     }
