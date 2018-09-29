@@ -19,7 +19,7 @@
     },
     "insight-ui-mec": {
         "apiPrefix": "api",
-        "routePrefix": ""
+        "routePrefix": "mec"
     }
   }
 }
